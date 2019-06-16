@@ -1,0 +1,16 @@
+<div class="container">
+    <section class="jumbotron">
+        <h2> Currency Rates. </h2>
+        <h3> From Euro to the world </h3>
+        <pre>{{ currentEuroRates | json }}</pre>
+    
+        <button mat-stroked-button color="primary" (click)="postRates()">Send Post</button>
+        <pre *ngIf="postCurrent? 'postCurrent':''">{{ postCurrent | json }}</pre>
+
+        <button mat-stroked-button color="primary" (click)="deleteMyRates()">Send Delete</button>
+        <pre *ngIf="deleteCurrent? 'deleteCurrent':''">{{ deleteCurrent | json }}</pre>
+
+        <button mat-stroked-button color="primary" (click)="throwError()">Front Error</button>
+        <button mat-stroked-button color="primary" (click)="throwHttpError()">Http Error</button>
+    </section>
+</div>
