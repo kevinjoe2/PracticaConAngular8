@@ -55,7 +55,7 @@ export class RatesComponent implements OnInit, OnDestroy {
   }
 
   throwHttpError(){
-    this.http.get('urlhere').subscribe();
+    this.svc.testGet("urlHere").subscribe();
   }
 
 }
