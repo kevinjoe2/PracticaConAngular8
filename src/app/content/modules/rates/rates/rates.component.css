@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+}
+.mat-column-n{
+    justify-content: center;
+    max-width: 10%;
+}
+.mat-column-tipoCuenta{
+    justify-content: center;
+    max-width: 40%;
+}
+.mat-column-formaPago{
+    justify-content: center;
+    max-width: 40%;
+}
+.mat-column-valor{
+    justify-content: center;
+    max-width: 20%;
+}

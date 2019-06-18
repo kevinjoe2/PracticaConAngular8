@@ -13,4 +13,41 @@
         <button mat-stroked-button color="primary" (click)="throwError()">Front Error</button>
         <button mat-stroked-button color="primary" (click)="throwHttpError()">Http Error</button>
     </section>
+
+    <section class="jumbotron">
+        <div class="spinner-container" *ngIf="dataSourceAbonos.loading$ | async">
+            <mat-spinner></mat-spinner>
+        </div>
+        <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSourceAbonos"
+        matSort matSortActive="seqNo" matSortDirection="asc" matSortDisableClear>
+
+            <ng-container matColumnDef="n">
+                <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+                <mat-cell *matCellDef="let lesson">{{lesson.n}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tipoCuenta">
+                <mat-header-cell *matHeaderCellDef>Tipo de Cuenta</mat-header-cell>
+                <mat-cell class="description-cell" *matCellDef="let lesson">{{lesson.tipoCuenta}}</mat-cell>
+
+            </ng-container>
+
+            <ng-container matColumnDef="formaPago">
+                <mat-header-cell *matHeaderCellDef>Forma de Pago</mat-header-cell>
+                <mat-cell class="duration-cell" *matCellDef="let lesson">{{lesson.formaPago}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="valor">
+                <mat-header-cell *matHeaderCellDef>Valor</mat-header-cell>
+                <mat-cell class="duration-cell" *matCellDef="let lesson">{{lesson.valor}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumnsAbonos"></mat-header-row>
+
+            <mat-row *matRowDef="let row; columns: displayedColumnsAbonos"></mat-row>
+
+        </mat-table>
+
+        <mat-paginator [pageSize]="3" [pageSizeOptions]="[3, 5, 10]"></mat-paginator>
+    </section>
 </div>

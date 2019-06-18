@@ -6,6 +6,11 @@ import { RatesComponent } from './rates/rates.component';
 
 import { HttpClientModule  } from '@angular/common/http';
 
+// ANGULAR MATERIAL
+import { 
+  MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule, MatListModule, MatSidenavModule,
+  MatToolbarModule } from "@angular/material";
 import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
@@ -16,7 +21,16 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     RatesRoutingModule,
     HttpClientModule,
-    MatButtonModule
+    // ANGULAR MATERIAL
+    MatButtonModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatListModule,
+    MatSidenavModule,
+    MatToolbarModule
   ]
 })
 export class RatesModule { }
